@@ -1,0 +1,97 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600&display=swap");
+
+:root {
+  --background: #f5f7fb;
+  --card-border: #e5e7eb;
+  --card-shadow: 0 10px 25px rgba(15, 23, 42, 0.1);
+  --primary: #0d6efd;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  font-family: "Noto Sans KR", "Apple SD Gothic Neo", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--background);
+  padding: 2rem 1rem;
+  color: #0f172a;
+}
+
+.dark-mode-toggle {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  border: 1px solid var(--primary);
+  background: #fff;
+  color: var(--primary);
+  padding: 0.6rem 1.2rem;
+  border-radius: 999px;
+  cursor: pointer;
+  box-shadow: var(--card-shadow);
+  font-weight: 600;
+}
+
+.success-card {
+  background: #fff;
+  border: 1px solid var(--card-border);
+  border-radius: 16px;
+  max-width: 420px;
+  width: 100%;
+  padding: 2rem;
+  box-shadow: var(--card-shadow);
+}
+
+h1 {
+  margin-top: 0;
+  color: #f8fafc;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+  color: #f8fafc;
+}
+
+li + li {
+  margin-top: 0.35rem;
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+}
+
+.actions a {
+  display: inline-block;
+  border: none;
+  border-radius: 10px;
+  padding: 0.8rem 1.5rem;
+  font-weight: 600;
+  text-decoration: none;
+  background: var(--primary);
+  color: #fff;
+}
+
+body.dark-mode {
+  background: #0f172a;
+  color: #f8fafc;
+}
+
+body.dark-mode .success-card {
+  background: #1e293b;
+  border-color: #334155;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+body.dark-mode ul {
+  color: #fff;
+}
+
+body.dark-mode .dark-mode-toggle {
+  background: #2563eb;
+  color: #fff;
+  border-color: transparent;
+}

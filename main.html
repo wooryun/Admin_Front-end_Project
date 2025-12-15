@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./css/main.css" />
+    <title>Admin Page</title>
+  </head>
+  <body id="pageRoot">
+    <div class="container py-4">
+      <section class="dashboard-card">
+        <div
+          class="d-flex flex-column flex-md-row justify-content-md-between align-items-md-center gap-3"
+        >
+          <div>
+            <h5 class="mb-1">오늘 날짜 / 현재 시간</h5>
+            <p id="dateTime" class="mb-0 text-secondary">--:--:--</p>
+          </div>
+          <a href="./html/signup.html" class="btn btn-success" id="signupButton"
+            >회원가입</a
+          >
+        </div>
+
+        <h3 class="mt-4 mb-3">신규 등록 상품</h3>
+        <form class="row row-cols-lg-auto g-3 align-items-center">
+          <div class="col-12">
+            <label class="visually-hidden" for="inlineFormSelectPref"
+              >Preference</label
+            >
+            <select
+              class="form-select"
+              id="inlineFormSelectPref"
+              name="category_data_table"
+            >
+              <option value="" selected>카테고리</option>
+              <option value="cloth_top">상의</option>
+              <option value="cloth_pants">하의</option>
+              <option value="cloth_shoes">신발</option>
+              <option value="miscellaneous_goods">패션잡화</option>
+            </select>
+          </div>
+          <div class="col-12">
+            <select class="form-select" id="genderSelect">
+              <option value="" selected>성별 선택</option>
+              <option value="male">남성</option>
+              <option value="female">여성</option>
+              <option value="unisex">공용</option>
+            </select>
+          </div>
+          <div class="col-3">
+            <input
+              id="searchInput"
+              class="form-control"
+              type="text"
+              placeholder="제품명을 입력해주세요"
+            />
+          </div>
+          <div class="col-auto">
+            <button
+              type="button"
+              id="searchButton"
+              class="btn btn-primary px-3"
+            >
+              조회
+            </button>
+          </div>
+        </form>
+
+        <div class="container mt-3">
+          <table class="table table-sm">
+            <thead>
+              <tr>
+                <th>카테고리</th>
+                <th>브랜드</th>
+                <th>제품명</th>
+                <th>가격</th>
+                <th>성별</th>
+              </tr>
+            </thead>
+            <tbody id="product_data_Table">
+              <!-- tbody요소의 id="product_data_Table" 는 지우거나 변경하면 안돼요! -->
+              <!-- 제품 데이터가 여기 추가됩니다. -->
+            </tbody>
+          </table>
+        </div>
+        <nav aria-label="상품 목록 페이지네이션">
+          <ul class="pagination justify-content-center" id="pagination"></ul>
+        </nav>
+      </section>
+    </div>
+
+    <button
+      id="darkModeFloating"
+      class="btn btn-outline-secondary dark-mode-toggle"
+    >
+      다크 모드
+    </button>
+    <script src="./js/main.js"></script>
+    <script>
+      const pageRoot = document.getElementById("pageRoot");
+      const floatingToggle = document.getElementById("darkModeFloating");
+      const THEME_KEY = "preferredTheme";
+
+      const updateTime = () => {
+        const el = document.getElementById("dateTime");
+        if (el) {
+          el.textContent = new Date().toLocaleString("ko-KR");
+        }
+      };
+      updateTime();
+      setInterval(updateTime, 1000);
+
+      const applyTheme = (mode) => {
+        if (!pageRoot || !floatingToggle) return;
+        if (mode === "dark") {
+          pageRoot.classList.add("dark-mode");
+          floatingToggle.textContent = "라이트 모드";
+        } else {
+          pageRoot.classList.remove("dark-mode");
+          floatingToggle.textContent = "다크 모드";
+        }
+      };
+
+      const savedTheme = localStorage.getItem(THEME_KEY) || "light";
+      applyTheme(savedTheme);
+
+      if (pageRoot && floatingToggle) {
+        floatingToggle.addEventListener("click", () => {
+          const nextTheme = pageRoot.classList.contains("dark-mode")
+            ? "light"
+            : "dark";
+          localStorage.setItem(THEME_KEY, nextTheme);
+          applyTheme(nextTheme);
+        });
+      }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

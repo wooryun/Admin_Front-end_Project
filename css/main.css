@@ -1,0 +1,128 @@
+body {
+  font-family: "Noto Sans KR", "Apple SD Gothic Neo", sans-serif;
+  background-color: #f5f7fb;
+  color: #0f172a;
+}
+
+.table thead th,
+.table tbody td {
+  text-align: center;
+  vertical-align: middle;
+  border: 1px solid #dee2e6;
+}
+
+.table thead th {
+  background-color: #f8f9fa;
+  font-weight: 600;
+}
+
+.table tbody tr:last-child td {
+  border-bottom-width: 1px;
+}
+
+.pagination .page-link {
+  transition: background-color 0.2s, color 0.2s;
+  box-shadow: none;
+}
+
+.pagination .page-item .page-link:hover {
+  background-color: #e9ecef;
+  color: #343a40;
+}
+
+.pagination .page-item.active .page-link,
+.pagination .page-item .page-link:active {
+  background-color: #0d6efd;
+  color: #fff;
+}
+
+.pagination .page-item .page-link:focus {
+  box-shadow: none;
+}
+
+.dark-mode .pagination .page-link {
+  background-color: #0f1b2e;
+  color: #e2e8f0;
+  border-color: #334155;
+}
+
+.dark-mode .pagination .page-item .page-link:hover {
+  background-color: #1e2d46;
+  color: #f8fafc;
+}
+
+.dark-mode .pagination .page-item.active .page-link,
+.dark-mode .pagination .page-item .page-link:active {
+  background-color: #3b82f6;
+  border-color: #3b82f6;
+  color: #fff;
+}
+
+.dark-mode-toggle {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 1000;
+}
+
+.dark-mode {
+  background-color: #0f172a;
+  color: #f5f5f5;
+}
+
+.dark-mode .table {
+  color: #f5f5f5;
+}
+
+.dark-mode .table thead th,
+.dark-mode .table tbody td {
+  border-color: #444;
+  color: #f8fafc;
+}
+
+.dark-mode .table thead th {
+  background-color: #14213d;
+}
+
+.dark-mode .table tbody td {
+  background-color: #0d1a2b;
+}
+
+.dark-mode .btn.btn-primary {
+  background-color: #4c7ef3;
+  border-color: #4c7ef3;
+}
+
+.dark-mode .btn.btn-outline-secondary {
+  color: #f5f5f5;
+  border-color: #f5f5f5;
+}
+
+.dark-mode .form-control,
+.dark-mode .form-select {
+  background-color: #0f1b2e;
+  color: #f8fafc;
+  border-color: #475569;
+}
+
+.dark-mode .form-control:focus,
+.dark-mode .form-select:focus {
+  background-color: #0f1b2e;
+  color: #f8fafc;
+  border-color: #66b2ff;
+  box-shadow: 0 0 0 3px rgba(102, 178, 255, 0.3);
+}
+
+.dark-mode .form-control::placeholder,
+.dark-mode .form-select::placeholder {
+  color: #f8fafc;
+}
+.empty-row {
+  text-align: center;
+  padding: 1rem;
+  color: #6c757d;
+}
+
+#pageRoot.dark-mode .empty-row {
+  color: #f8fafc;
+}

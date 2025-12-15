@@ -1,0 +1,180 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600&display=swap");
+
+:root {
+  --card-shadow: 0 10px 25px rgba(15, 23, 42, 0.1);
+  --card-border: #e5e7eb;
+  --input-border: #d1d5db;
+  --primary-color: #0d6efd;
+  --background: #f5f7fb;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  font-family: "Noto Sans KR", "Apple SD Gothic Neo", sans-serif;
+  background: var(--background);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 1rem;
+}
+
+.dark-mode-toggle {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  border: 1px solid var(--primary-color);
+  background: #fff;
+  color: var(--primary-color);
+  padding: 0.6rem 1.2rem;
+  border-radius: 999px;
+  cursor: pointer;
+  box-shadow: var(--card-shadow);
+  font-weight: 600;
+}
+
+.dark-mode-toggle:active {
+  transform: translateY(1px);
+}
+
+.signup-wrapper {
+  width: 100%;
+  max-width: 420px;
+}
+
+.signup-card {
+  background: #fff;
+  border-radius: 16px;
+  border: 1px solid var(--card-border);
+  box-shadow: var(--card-shadow);
+  padding: 2.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.signup-title {
+  margin: 0 0 0.5rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.signup-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.field-label {
+  font-size: 0.95rem;
+  color: #1f2937;
+  font-weight: 500;
+}
+
+.signup-field input[type="text"],
+.signup-field input[type="password"],
+.signup-field input[type="tel"],
+.signup-field input[type="email"] {
+  border: 1px solid var(--input-border);
+  border-radius: 8px;
+  padding: 0.7rem 0.9rem;
+  font-size: 0.95rem;
+  transition: border 0.2s;
+}
+
+.signup-field input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.15);
+}
+
+.field-help {
+  font-size: 0.8rem;
+  color: #6b7280;
+  line-height: 1.4;
+}
+
+fieldset.signup-field {
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+.gender-option {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.95rem;
+  color: #374151;
+}
+
+.gender-option + .gender-option {
+  margin-top: 0.4rem;
+}
+
+.signup-submit {
+  border: none;
+  border-radius: 8px;
+  background: var(--primary-color);
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.85rem;
+  cursor: pointer;
+  margin-top: 0.5rem;
+  transition: background 0.2s, transform 0.1s;
+}
+
+.signup-submit:hover {
+  background: #0b5ed7;
+}
+
+.signup-submit:active {
+  transform: translateY(1px);
+}
+
+body.dark-mode {
+  background: #0f172a;
+  color: #f5f5f5;
+}
+
+body.dark-mode .signup-card {
+  background: #1e293b;
+  border-color: #334155;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+body.dark-mode .field-label,
+body.dark-mode .signup-title {
+  color: #f8fafc;
+}
+
+body.dark-mode input {
+  background: #0f172a;
+  color: #f1f5f9;
+  border-color: #475569;
+}
+
+body.dark-mode input:focus {
+  border-color: #66b2ff;
+  box-shadow: 0 0 0 3px rgba(102, 178, 255, 0.25);
+}
+
+body.dark-mode .field-help {
+  color: #cbd5f5;
+}
+
+body.dark-mode .signup-submit {
+  background: #2563eb;
+}
+
+body.dark-mode .dark-mode-toggle {
+  background: #2563eb;
+  color: #fff;
+  border-color: transparent;
+}

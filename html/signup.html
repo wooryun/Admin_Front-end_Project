@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>회원가입</title>
+    <link rel="stylesheet" href="../css/signup.css" />
+  </head>
+  <body>
+    <button id="darkModeToggle" class="dark-mode-toggle" type="button">
+      다크 모드
+    </button>
+    <main class="signup-wrapper">
+      <form id="signupForm" class="signup-card" action="#" novalidate>
+        <h1 class="signup-title">회원가입</h1>
+
+        <label class="signup-field">
+          <span class="field-label">아이디</span>
+          <input type="text" name="id" placeholder="아이디" required />
+        </label>
+
+        <label class="signup-field">
+          <span class="field-label">비밀번호</span>
+          <input
+            type="password"
+            name="password"
+            placeholder="비밀번호"
+            minlength="8"
+            maxlength="30"
+            required
+          />
+          <span class="field-help"
+            >영문, 숫자, 특수문자를 포함한 8자 이상 30자 미만이어야
+            합니다.</span
+          >
+        </label>
+
+        <label class="signup-field">
+          <span class="field-label">비밀번호 확인</span>
+          <input
+            type="password"
+            name="passwordConfirm"
+            placeholder="비밀번호 확인"
+            minlength="8"
+            maxlength="30"
+            required
+          />
+        </label>
+
+        <label class="signup-field">
+          <span class="field-label">이름</span>
+          <input type="text" name="name" placeholder="사용자 이름" required />
+        </label>
+
+        <label class="signup-field">
+          <span class="field-label">전화번호</span>
+          <input type="tel" name="phone" placeholder="휴대전화 번호" required />
+        </label>
+
+        <fieldset class="signup-field">
+          <legend class="field-label mb-2">성별</legend>
+          <label class="gender-option">
+            <input type="radio" name="gender" value="male" checked />
+            남자
+          </label>
+          <label class="gender-option">
+            <input type="radio" name="gender" value="female" />
+            여자
+          </label>
+        </fieldset>
+
+        <label class="signup-field">
+          <span class="field-label">이메일</span>
+          <input type="email" name="email" placeholder="이메일" required />
+        </label>
+
+        <button type="submit" class="signup-submit">가입</button>
+      </form>
+    </main>
+    <script src="../js/signup.js"></script>
+  </body>
+</html>
